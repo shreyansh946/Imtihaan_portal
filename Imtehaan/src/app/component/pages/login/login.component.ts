@@ -43,13 +43,41 @@ export class LoginComponent  implements OnInit{
           (data:any) =>{
             console.log('Success');
             console.log(data);
-          },
+
+
+            this.login.loginUser(data.token);
+
+            this.login.getCurrentUser().subscribe(
+              (user:any) =>{
+                this.login.setUser(user);
+
+                  if(this.login.getUserRole() == "ADMIN")
+                  {
+                        window.location.href='/admin';
+
+                  }
+                  else if(this.login.getUserRole() == "NORMAL")
+                  {
+
+                    window.location.href='/user-dashboard';
+                  }
+                  else
+                  {
+                        this.login.logout();
+                        location.reload();
+                  }
+
+              }
+            )
+          })
+
+          this.login.generateToken(this.loginData).subscribe(
           (error) =>{
             console.log('Error !');
             console.log(error);
+            this.snack.open("this in valid token");
           }
-
-        )
+          )
 
   }
 
