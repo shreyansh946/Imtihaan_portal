@@ -7,14 +7,27 @@
    <span class="example-spacer"></span>
    
    <a 
+    *ngIf="!login.isLoggedIn()"
+
     routerLink="/login"
    mat-icon-button class="example-icon favorite-icon text" aria-label="Example icon-button with heart icon">
     Login
     </a>
  
-   <a routerLink="/signup" mat-icon-button 
+   <a 
+   *ngIf="!login.isLoggedIn()"
+   
+   [routerLink]="'/signup'" mat-icon-button 
    class="example-icon favorite-icon text1" 
    aria-label="Example icon-button with heart icon">
    Register</a> 
+
+   <a 
+   (click) ="logout()"
+   *ngIf="!login.isLoggedIn()"
+    mat-icon-button 
+   class="example-icon favorite-icon text2" 
+   aria-label="Example icon-button with heart icon">
+   logout </a> 
     
  </mat-toolbar>
