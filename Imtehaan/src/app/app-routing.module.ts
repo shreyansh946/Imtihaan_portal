@@ -5,6 +5,7 @@ import { LoginComponent } from './component/pages/login/login.component';
 import { HomeComponent } from './component/pages/home/home.component';
 import { DashBoardComponent } from './component/pages/admin/dash-board/dash-board.component';
 import { UserdashboardComponent } from './component/pages/user/userdashboard/userdashboard.component';
+import { ProfileComponent } from './component/pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -25,12 +26,17 @@ const routes: Routes = [
   {
     path:'admin',
     component:DashBoardComponent,
-    pathMatch:'full',
+   
   },  
   {
     path:'user-dashboard',
     component:UserdashboardComponent,
     pathMatch:'full',
+  },
+  {
+   
+        path:'profile',
+        component:ProfileComponent,
   }
 ];
 

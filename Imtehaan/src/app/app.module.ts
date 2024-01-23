@@ -20,6 +20,9 @@ import { HomeComponent } from './component/pages/home/home.component';
 import { authInterceptorProvider } from './services/auth.interceptor';
 import { DashBoardComponent } from './component/pages/admin/dash-board/dash-board.component';
 import { UserdashboardComponent } from './component/pages/user/userdashboard/userdashboard.component';
+import { ProfileComponent } from './component/pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './component/pages/admin/sidebar/sidebar.component';
 
 
 
@@ -31,7 +34,9 @@ import { UserdashboardComponent } from './component/pages/user/userdashboard/use
     LoginComponent,
     HomeComponent,
     DashBoardComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    ProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { UserdashboardComponent } from './component/pages/user/userdashboard/use
     MatToolbarModule,
     MatSnackBarModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
